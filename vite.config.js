@@ -7,7 +7,9 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 export default defineConfig(({ mode }) => {
   const single = mode === 'single'
   return {
-    base: './',
+    // Project Pages URL: https://mugrahiman.github.io/NikahNuptials/
+    // Keep relative base for the offline single-file build.
+    base: single ? './' : '/NikahNuptials/',
     plugins: [react(), ...(single ? [viteSingleFile()] : [])],
     build: {
       outDir: single ? 'dist-single' : 'dist',
