@@ -1,0 +1,68 @@
+.label { font-family: var(--font-display); font-size: var(--fs-label); letter-spacing: .3em; text-transform: uppercase; color: var(--gold-deep); line-height: 1.6; text-wrap: balance; }
+
+/* buttons */
+.btn { display: inline-block; border: 2px solid var(--gold); background: transparent; color: var(--green); padding: .75em 1.8em; border-radius: 999px;
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-btn); letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer; user-select: none; transition: background .35s, color .35s, box-shadow .35s; }
+.btn:hover, .btn:focus-visible { background: var(--gold); color: #2b2410; box-shadow: 0 0 14px rgba(201,162,75,.55); outline: none; }
+.btn.dark { border-color: var(--green); }
+.btn.dark:hover, .btn.dark:focus-visible { background: var(--green); color: var(--cream); box-shadow: none; }
+.btn.small { padding: .65em 1.2em; letter-spacing: .1em; }
+.actions { display: flex; flex-wrap: wrap; gap: .8em; justify-content: center; margin-top: .5em; }
+
+/* bismillah + invitation */
+.bism-img { width: min(84cqw, 240cqh); height: auto; }
+.bism-en { font-size: calc(var(--fs-body) * 1.15); font-style: italic; color: var(--gold-deep); max-width: 30ch; line-height: 1.5; opacity: 0; text-wrap: balance; }
+.phrase-lead, .phrase-body { font-size: var(--fs-body); line-height: 1.7; max-width: 32ch; text-wrap: balance; }
+.phrase-host { font-family: var(--font-display); font-weight: 600; letter-spacing: .06em; font-size: calc(var(--fs-body) * 1.15); margin-top: .4em; text-wrap: balance; }
+.phrase-house { font-size: var(--fs-rel); margin-bottom: 1em; }
+
+/* couples */
+.couples { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.couple { --k: 1; width: 100%; display: flex; flex-direction: column; align-items: center; }
+.person { width: 100%; display: flex; flex-direction: column; align-items: center; gap: .2em; }
+.name { font-family: var(--font-display); font-weight: 600; letter-spacing: .08em; line-height: 1.25; text-wrap: balance;
+  font-size: calc(var(--fs-name) * var(--k)); color: var(--green); }
+.rel { font-size: calc(var(--fs-rel) * var(--k)); line-height: 1.3; opacity: .88; text-wrap: balance; }
+.amp { font-family: var(--font-script); font-size: calc(var(--fs-name) * 1.5 * var(--k, 1)); color: var(--gold-deep); line-height: 1.1; }
+.couple-divider { position: relative; width: 62%; height: 1px; margin: .9em auto; background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent); }
+.couple-divider span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 0 .6em; font-size: 11px; color: var(--gold-deep); }
+
+/* date + countdown */
+.reveal-gate { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 1em; }
+.hint { font-size: var(--fs-label); letter-spacing: .1em; opacity: .65; }
+.date-block { pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: .35em; width: 100%; opacity: 0; }
+.date-day { font-family: var(--font-display); font-size: var(--fs-body); letter-spacing: .4em; color: var(--gold-deep); }
+.date-main { font-family: var(--font-display); font-weight: 700; font-size: calc(var(--fs-h2) * 1.25); letter-spacing: .08em; line-height: 1.2; text-wrap: balance; }
+.date-time { font-family: var(--font-display); font-size: var(--fs-body); letter-spacing: .25em; }
+.cd { display: flex; justify-content: center; margin-top: 1em; max-width: 100%; }
+/* Sized from the container (cqw), like every other measurement on this page — an em-based
+   size here would ignore how much room the arch actually has and could overflow on small phones. */
+.cd-cell { display: flex; flex-direction: column; align-items: center; gap: .35em;
+  min-width: min(3.2em, 15cqw); padding: 0 min(.9em, 2.6cqw); }
+.cd-cell + .cd-cell { border-left: 1px solid rgba(169,129,47,.45); }
+.cd-num { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-num); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.cd-label { font-family: var(--font-display); font-size: var(--fs-label); letter-spacing: .22em; text-transform: uppercase; color: var(--gold-deep); }
+
+/* venue */
+.venue-name { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h2); letter-spacing: .06em; line-height: 1.25; text-wrap: balance; }
+.venue-addr { font-size: calc(var(--fs-body) * 1.1); }
+
+/* rsvp + guest book */
+.rsvp-reply { font-style: italic; font-size: var(--fs-body); max-width: 34ch; line-height: 1.55; text-wrap: balance; }
+.gb { margin-top: .9em; gap: .3em; }
+.gb-title { margin-top: .2em; }
+.gb-sub { font-size: var(--fs-rel); max-width: 34ch; text-wrap: balance; }
+.marquee { width: 100%; overflow: hidden; margin-top: .5em; }
+.marquee-row { display: flex; gap: .9em; width: max-content; animation: marquee 26s linear infinite; }
+.marquee:hover .marquee-row { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.gb-card { display: flex; gap: .6em; align-items: center; text-align: left; min-width: 15em; max-width: 17em; padding: .55em .8em; border: 1px solid var(--gold-light); border-radius: 10px; background: rgba(255,255,255,.4); font-size: var(--fs-rel); line-height: 1.3; }
+.gb-card b { font-family: var(--font-display); font-size: .95em; letter-spacing: .04em; }
+.avatar { flex: none; width: 2.2em; height: 2.2em; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; color: var(--cream); background: var(--green); }
+
+/* invitation card + closing */
+.monogram { width: max(44px, min(14cqw, 12cqh)); aspect-ratio: 1; border: 1px solid var(--gold); border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--font-script); font-size: var(--fs-h2); color: var(--gold-deep); }
+.closing-names { font-family: var(--font-script); font-size: calc(var(--fs-name) * 2.2); line-height: 1.25; color: var(--green); text-wrap: balance; }
+.closing-msg { font-style: italic; font-size: calc(var(--fs-body) * 1.15); max-width: 30ch; line-height: 1.6; text-wrap: balance; }
+.flourish { width: 30%; max-width: 160px; height: 2px; margin: .5em auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
